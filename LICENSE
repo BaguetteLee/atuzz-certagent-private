@@ -1,0 +1,23 @@
+Atuzz Community & Commercial License 1.0 (ACCL-1.0)
+Copyright (c) 2026 Atuzz. All rights reserved.
+
+1. Grant of License (Free Community Edition):
+Subject to the terms and conditions of this License, Atuzz hereby grants you a worldwide, non-exclusive, non-transferable, royalty-free license to deploy and use Atuzz CertAgent Private:
+  (a) for personal, educational, or non-production evaluation purposes without restriction;
+  (b) for production environments, provided that the instance manages no more than three (3) probe server nodes concurrently. Single-node domain and certificate issuance capacity is completely unlimited.
+
+2. Commercial License Requirement:
+Any production deployment, cluster, or instance managing more than three (3) probe server nodes concurrently requires a valid, officially issued Commercial License from Atuzz.
+
+3. Restrictions and Closed-Source Protection:
+You may not, and you may not permit any third party to:
+  (a) reverse engineer, decompile, disassemble, or attempt to derive the source code from bytecode or binary distributions;
+  (b) modify, adapt, or create unauthorized derivative works of the software;
+  (c) remove, alter, or obscure any proprietary notices, brand labels, or copyright markings;
+  (d) sub-license, rent, lease, resell, or distribute unauthorized rebranded ("white-labeled") copies of this software without explicit written permission from Atuzz.
+
+4. Termination:
+Any breach of this License automatically terminates your rights to use the software.
+
+5. Disclaimer of Warranty:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY.
