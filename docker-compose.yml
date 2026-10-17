@@ -1,0 +1,41 @@
+version: '3.8'
+
+# ==============================================================================
+# Atuzz CertAgent Private - Official Production Docker Compose Template
+# 
+# Official Image: ghcr.io/baguettelee/atuzz-certagent-private:latest
+# Quick Start:    docker compose up -d
+# Web Console:    https://<SERVER_IP>:3443 (Set admin password on first visit)
+# Documentation:  https://github.com/BaguetteLee/atuzz-certagent-private
+# Business Email: support@certagent.net
+# ==============================================================================
+
+services:
+  certagent:
+    image: ghcr.io/baguettelee/atuzz-certagent-private:latest
+    container_name: atuzz-certagent-private
+    restart: unless-stopped
+    ports:
+      # HTTP bootstrap & public distribution port (Root CA download & agent registration)
+      - "${PORT:-3000}:3000"
+      # HTTPS native green-lock management console (Central Web Hub)
+      - "${HTTPS_PORT:-3443}:3443"
+    volumes:
+      # Core persistent data volume: stores private Root CA keys, cert database, and system configs
+      - ./data:/app/data
+      # Host machine ID passthrough (Read-only, optional): ensures unique node identity
+      - /etc/machine-id:/etc/machine-id:ro
+    environment:
+      - PORT=3000
+      - HTTPS_PORT=3443
+      - DATA_DIR=/app/data
+      - TZ=${TZ:-Asia/Shanghai}
+      - NODE_ENV=production
+      - ROOT_CA_CN=${ROOT_CA_CN:-Atuzz CertAgent Enterprise Root CA}
+      - ROOT_CA_ORG=${ROOT_CA_ORG:-Atuzz CertAgent CA}
+      - RENEWAL_THRESHOLD_DAYS=${RENEWAL_THRESHOLD_DAYS:-30}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "3"
